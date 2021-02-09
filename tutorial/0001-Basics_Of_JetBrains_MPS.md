@@ -87,3 +87,24 @@ Current Desktop: GNOME
 ```
 
 这里可以开始解释一些东西了。
+
+## 真正的“基础概念”
+
+一个 JetBrains MPS Project 可以包含若干 modules，module 有四种类型：
+
+1. Language module 用于定义若干 aspects，这些 aspects 从不同角度描述了一个语言。
+2. Generator module 用于定义一些将代码变换为另外一种语言的转换规则。
+3. Solution module 用于记录代码。
+4. DevKits module 用于将若干 Language modules 和 Solution modules 打包在一起，以方便依赖作他用。
+
+Solution module 又有三种类型：
+
+1. Sandbox solution 记录用户的程序。
+2. Runtime solution 记录可复用代码，经常用于加载外部源码，例如 `.jar` 文件等。
+3. Plugin solution 记录用于扩展 IDE 功能的代码，例如菜单、工具栏等。
+
+<!-- 以上意译自 Tip of the Day，下面是亲身体验 -->
+
+Aspects 又分为十几种类型：
+
+1. 
