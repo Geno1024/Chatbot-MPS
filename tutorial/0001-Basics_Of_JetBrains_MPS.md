@@ -107,4 +107,20 @@ Solution module 又有三种类型：
 
 Aspects 又分为十几种类型：
 
-1. 
+1. <span style="color: rgb(172, 215, 155)">Structure</span> 描述语言的结构（其实就是 AST）。
+2. <span style="color: rgb(248, 207, 139)">Editor</span> 描述语言的展示方式。
+3. <span style="color: rgb(140, 211, 236)">Constraints</span> 描述语言中的一些约束。
+4. <span style="color: rgb(184, 194, 200)">Behavior</span> 描述语言结构上的一些操作（把 AST Node 当作 class 时的 class method）。
+5. <span style="color: rgb(213, 195, 251)">Typesystem</span> 描述语言的类型系统。
+6. <span style="color: rgb(246, 180, 192)">Actions</span>
+7. <span style="color: rgb(161, 224, 223)">Feedback</span>
+8. <span style="color: rgb(194, 170, 243)">Refactorings</span>
+9. <span style="color: rgb(154, 167, 176)">Scripts</span>
+10. <span style="color: rgb(243, 188, 97)">Intentions</span>
+11. <span style="color: rgb(184, 217, 172)">FindUsages</span>
+12. <span style="color: rgb(120, 137, 150)">Plugin</span>
+13. <span style="color: rgb(135, 206, 231)">DataFlow</span>
+14. <span style="color: rgb(212, 108, 94)">Te</span><span style="color: rgb(87, 181, 94)">st</span>
+15. <span style="color: rgb(167, 210, 150)">TextGen</span>
+16. <span style="color: rgb(126, 202, 230)">Migra</span><span style="color: rgb(243, 195, 116)">tion</span>
+17. <span style="color: rgb(116, 189, 29)">VCS</span>
