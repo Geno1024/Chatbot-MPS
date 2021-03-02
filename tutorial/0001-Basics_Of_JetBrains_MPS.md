@@ -124,3 +124,5 @@ Aspects 又分为十几种类型：
 15. <span style="color: rgb(167, 210, 150)">TextGen</span>
 16. <span style="color: rgb(126, 202, 230)">Migra</span><span style="color: rgb(243, 195, 116)">tion</span>
 17. <span style="color: rgb(116, 189, 29)">VCS</span>
+
+现在由于时间的原因，我们先不深入展开这些东西。前五个是默认就有的，应该比较重要，那么我们就按照顺序一个个来看一下。
