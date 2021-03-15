@@ -20,4 +20,4 @@
 
 # S
 
-- <a id="structure">Structure</a>: 结构 [@0002](0002-Structure-Elementary.md)
+- <a id="structure">Structure</a>: 结构 [@0002](0002-Structure-Preparation.md)
