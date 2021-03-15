@@ -11,3 +11,4 @@
 0. [介绍](0000-Intro.md)
 1. [JetBrains MPS 的基础概念](0001-Basics_Of_JetBrains_MPS.md)
 2. [Structure 准备](0002-Structure-Preparation.md)
+3. [Structure 入门](0003-Structure-Elementary.md)
