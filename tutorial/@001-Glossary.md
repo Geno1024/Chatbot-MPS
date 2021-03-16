@@ -20,4 +20,4 @@
 
 # S
 
-- <a id="structure">Structure</a>: 结构 [@0002](0002-Structure-Preparation.md)
+- <a id="structure"><span style="color: rgb(172, 215, 155)">Structure</span></a>: 结构 [@0002](0002-Structure-Preparation.md)
