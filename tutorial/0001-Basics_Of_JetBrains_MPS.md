@@ -125,4 +125,34 @@ Aspects 又分为十几种类型：
 16. <span style="color: rgb(126, 202, 230)">Migra</span><span style="color: rgb(243, 195, 116)">tion</span>
 17. <span style="color: rgb(116, 189, 29)">VCS</span>
 
-现在由于时间的原因，我们先不深入展开这些东西。前五个是默认就有的，应该比较重要，那么我们就按照顺序一个个来看一下。
+现在由于时间的原因，我们先不深入展开这些东西。
+
+---
+
+填入 Project name 和 Language name 之后，就可以创建一个项目了。不过个人习惯把 Runtime Solution 和 Sandbox Solution 也勾上。毕竟感觉可能后面会用到。  
+这里，我填的是 Project name 是 `com.geno1024.chatbot`，Language name 是 `com.geno1024.chatbotlang`。
+
+然后就会创建出这样的项目结构，使用 Logical View 看到的是这样的：
+
+```
+> com.geno1024.chatbot
+  > com.geno1024.chatbotlang.runtime
+    > com.geno1024.chatbotlang
+      > runtime
+  > com.geno1024.chatbotlang.sandbox
+    > com.geno1024.chatbotlang
+      > sandbox
+  > com.geno1024.chatbotlang
+    > structure
+    > editor
+    > constraints
+    > behavior
+    > typesystem
+    > generator/com.geno1024.chatbotlang/main
+      > com.geno1024.chatbotlang.generator
+        > templates@generator
+          > main
+    > runtime
+```
+
+从这里开始，我们将用这个项目来**探索**并学习 MPS “程序”的“编写”和使用方式。 

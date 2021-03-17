@@ -30,7 +30,7 @@
 
 这里，因为我去年已经做过一个，因此这一步近乎省略。去年的语法结构是：
 
-```ebnf
+```bnf
 ChatbotProgram ::= BotLogin BanList ReplyList
 
 BotLogin ::= QQId QQPassword
@@ -39,12 +39,12 @@ BanList ::= BanQQ*
 BanQQ ::= QQId
 
 ReplyList ::= Reply*
-Reply ::= (OnBoot|OnReceive)
+Reply ::= OnBoot | OnReceive
 OnBoot ::= QQGroupId ReplyContent
 OnReceive ::= KeywordType Keyword+ ReplyContent
 
-KeywordType ::= (ExactMatchType|ContainingType)
-ReplyContent ::= (StaticReply|InputAwareReply)
+KeywordType ::= ExactMatchType | ContainingType
+ReplyContent ::= StaticReply | InputAwareReply
 
 QQId ::= Number
 QQGroupId ::= Number
@@ -57,7 +57,7 @@ InputAwareReply ::= Function
 
 今年的准备加一个中间层，让 `ReplyContent` 有一个 `ReplyPool` 然后可以在池子里面选，这样比如说多个关键词对应同一个回复的话就不用每一个都改了。于是这个语法结构就变成了：
 
-```ebnf
+```bnf
 ChatbotProgram ::= BotLogin BanList ReplyList ReplyPool # Modified
 
 BotLogin ::= QQId QQPassword
@@ -66,14 +66,14 @@ BanList ::= BanQQ*
 BanQQ ::= QQId
 
 ReplyList ::= Reply*
-Reply ::= (OnBoot|OnReceive)
+Reply ::= OnBoot | OnReceive
 OnBoot ::= QQGroupId ReplyContent
 OnReceive ::= KeywordType Keyword+ ReplyContent
 
 ReplyPool ::= ReplyEntry* # Added
 ReplyEntry ::= ReplyEntryName (StaticReply|InputAwareReply) # Added
 
-KeywordType ::= (ExactMatchType|ContainingType)
+KeywordType ::= ExactMatchType | ContainingType
 ReplyContent ::= ReplyEntryName # Modified
 
 QQId ::= Number
