@@ -116,7 +116,7 @@ concept ChatbotProgram extends    BaseConcept
 
 ## 构建一下这个语言
 
-在左边 `con.geno1024.chatbotlang` 的地方右键 `Rebuild language` 一下，将重新构建这个语言。
+在左边 `con.geno1024.chatbotlang` 的地方右键 `Rebuild Language` 一下，将重新构建这个语言。
 
 首先 Model Checker 将按照既定规则检查这个语言有什么规则上的错误，然后会使用给定的规则来构建这个语言。<span style="color: darkgray">其实是编译为 Java</span>
 
