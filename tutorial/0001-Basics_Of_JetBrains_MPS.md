@@ -127,7 +127,7 @@ Aspects 又分为十几种类型：
 
 现在由于时间的原因，我们先不深入展开这些东西。
 
----
+## 项目结构
 
 填入 Project name 和 Language name 之后，就可以创建一个项目了。不过个人习惯把 Runtime Solution 和 Sandbox Solution 也勾上。毕竟感觉可能后面会用到。  
 这里，我填的是 Project name 是 `com.geno1024.chatbot`，Language name 是 `com.geno1024.chatbotlang`。

@@ -112,4 +112,21 @@ concept ChatbotProgram extends    BaseConcept
   << ... >>
 ```
 
-这样，一个什么都没有的最简单的 Concept 就写好了。
+这样，一个什么都没有的最简单的 Concept 就写好了。其实，一个什么都不能做的编程语言也写好了。
+
+## 构建一下这个语言
+
+在左边 `con.geno1024.chatbotlang` 的地方右键 `Rebuild language` 一下，将重新构建这个语言。
+
+首先 Model Checker 将按照既定规则检查这个语言有什么规则上的错误，然后会使用给定的规则来构建这个语言。<span style="color: darkgray">其实是编译为 Java</span>
+
+构建无错误之后，我们就可以在 `com.geno1024.chatbotlang.sandbox/com.geno1024.chatbotlang/sandbox` 上，右键创建一个 `ChatbotProgram` 了。
+
+然而，如我们所见，现在创建出来的东西只有空荡荡的
+
+```
+chatbot program
+```
+
+，没有任何可供我们操作的地方。我们接下来将逐步完善这个 `ChatbotProgram`。
+

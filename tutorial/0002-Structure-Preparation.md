@@ -1,5 +1,9 @@
 # <span style="color: rgb(172, 215, 155)">Structure</span> 准备
 
+[TOC]
+
+## Structure 包含了什么
+
 <span style="color: rgb(172, 215, 155)">Structure</span> 下有几种东西
 
 1. Concept
@@ -12,7 +16,7 @@
 8. j.m.lang.resources 里面的 URL Literal
 9. j.m.lang.resources 里面的 (deprecated) OldIconBundle
 
----
+## 我转变思路了
 
 当然我并不准备把所有东西都讲一遍。写到这里我更加倾向于慢慢提及功能。因此下一篇不会叫做“<span style="color: rgb(248, 207, 139)">Editor</span> 准备”了。
 
@@ -20,7 +24,7 @@
 
 我干脆就变成，我边写这个项目，一边把用到的东西都讲述一遍吧。
 
----
+## 我又转变思路了，先思考一下我们想要啥
 
 首先我们~~先划个水~~思考一下我们要做的“语言”的语法结构，然后**用 Concept 表达出来**。
 
