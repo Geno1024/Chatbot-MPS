@@ -51,7 +51,6 @@ concept <no name> extends    BaseConcept
 
 我再把上一节提出的“语法结构”重温一下：
 
-
 ```bnf
 ChatbotProgram ::= BotLogin BanList ReplyList ReplyPool # Modified
 
@@ -92,7 +91,7 @@ InputAwareReply ::= Function
 1. 在 `concept` 处填上根节点名字 `ChatbotProgram`。
 2. 修改 `instance can be root` 为 `true`。
     1. 这里可以将光标放在 `false` 的 `f` 左边，然后按下 <kbd>Ctrl</kbd> + <kbd>Space</kbd>。
-    2. 慢慢体验并学习 <kbd>Ctrl</kbd> + <kbd>Space</kbd> 快捷键的用法。在接下来我们将严重依赖这个快捷键。
+    2. 慢慢体验并学习 <kbd>CS</kbd> 键的用法。在接下来我们将严重依赖这个快捷键。
 
 ```mps-structure
 concept ChatbotProgram extends    BaseConcept
@@ -130,3 +129,18 @@ chatbot program
 
 ，没有任何可供我们操作的地方。我们接下来将逐步完善这个 `ChatbotProgram`。
 
+## 给语言添砖加瓦
+
+接下来我们要以一种迷之方式来介绍一下如何给这个东西添砖加瓦。在这个过程中你可能会对某些过程和动作的原因表示摸不着头脑。放心，这是正常的，我在写这一个东西的时候也是摸不着头脑的。
+
+1. `ChatbotProgram` 要有个名字。
+    > 隐藏知识：有一个 `Concept` 叫做 `INamedConcept` 可以直接拿来用，这样我们就不需要造 `Name` 的轮子。
+    
+    在 `implements` 处按下 <kbd>CS</kbd> 键，会出来一大堆补全 `Interface` 的提示。我们选择 `INamedConcept`，这样就好了。
+    然后重新构建一下这个语言，可以发现在 `sandbox` 中新建出来的 `ChatbotProgram` 变成了可以填写名字的
+    
+    ```
+    chatbot program <no name>
+    ```
+    而且给 `<no name>` 填空的话左边的 Logical View 里的这个 Node 的名字也会变。真的是很奇妙。
+2. `ChatbotProgram` 
