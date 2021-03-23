@@ -136,11 +136,124 @@ chatbot program
 1. `ChatbotProgram` 要有个名字。
     > 隐藏知识：有一个 `Concept` 叫做 `INamedConcept` 可以直接拿来用，这样我们就不需要造 `Name` 的轮子。
     
-    在 `implements` 处按下 <kbd>CS</kbd> 键，会出来一大堆补全 `Interface` 的提示。我们选择 `INamedConcept`，这样就好了。
-    然后重新构建一下这个语言，可以发现在 `sandbox` 中新建出来的 `ChatbotProgram` 变成了可以填写名字的
+    1. 在 `implements` 处按下 <kbd>CS</kbd> 键，会出来一大堆补全 `Interface` 的提示。我们选择 `INamedConcept`，这样就好了。
+    2. 然后重新构建一下这个语言，可以发现在 `sandbox` 中新建出来的 `ChatbotProgram` 变成了可以填写名字的
     
     ```
     chatbot program <no name>
     ```
-    而且给 `<no name>` 填空的话左边的 Logical View 里的这个 Node 的名字也会变。真的是很奇妙。
-2. `ChatbotProgram` 
+    3. 而且给 `<no name>` 填空的话左边的 Logical View 里的这个 Node 的名字也会变。真的是很奇妙。
+2. `ChatbotProgram` 能记录一个 QQ 账号密码。
+    1. 在 `properties` 处按下 <kbd>CS</kbd> 键，会出来四种类型。我们添加两个 `string` 类型的 property，一个叫做 `qqid`，一个叫做 `qqpassword` 好了。
+3. `ChatbotProgram` 要有一个 `ReplyPool`，然后有一些 `OnReceive` 的“回调函数”判定当遇到什么东西时返回什么。
+    1. 创建新的 `Concept` 叫做 `ReplyPool`，再创建一个叫做 `Reply`。
+    2. 在 `Reply` 的 `concept` 前面按下 `a` 然后 <kbd>CS</kbd>，让其变为一个 `abstract` 的 `Concept`。
+    3. 然后在 `ReplyPool` 上添加一个类型为 `Reply[0..n]` 的 `children`，比如说叫做 `replies` 之类。
+    4. 接着让 `ChatbotProgram` 添加一个类型为 `ReplyPool[1]` 的 `children`。
+    5. 然后创建一个 `Concept` 叫做 `OnReceive`，修改其 `extends` 为 `Reply`，并挂上两个 `string` 的 `properties` 分别叫做 `keyword` 和 `reply`。
+    
+    最终你会得到大概这样的一棵树：
+    ```
+    > strcture
+      > ChatbotProgram
+      > OnReceive
+      > Reply
+      > ReplyPool
+    ```
+    其中
+    ```mps-structure
+    concept ChatbotProgram extends    BaseConcept                                                                                                                                                  
+                           implements INamedConcept                                                                                                                                             
+                                                                                                                                                                                            
+        instance can be root: true 
+        alias: <no alias>
+        short description: <no short description>
+        
+        properties:
+        qqid       : string
+        qqpassword : string
+        
+        children:
+        pool : ReplyPool[1]
+        
+        references:
+        << ... >>
+    ```
+    ```mps-structure
+    concept OnReceive extends    Reply                                                                                                                                                  
+                      implements <none>                                                                                                                                             
+                                                                                                                                                                      
+        instance can be root: false 
+        alias: <no alias>
+        short description: <no short description>
+        
+        properties:
+        keyword : string
+        reply   : string
+        
+        children:
+        << ... >>
+        
+        references:
+        << ... >>
+    ```
+    ```mps-structure
+    abstract concept Reply extends    BaseConcept                                                                                                                                                 
+                           implements <none>                                                                                                                                             
+                                                                                                                                                                      
+        instance can be root: false 
+        alias: <no alias>
+        short description: <no short description>
+        
+        properties:
+        << ... >>
+        
+        children:
+        << ... >>
+        
+        references:
+        << ... >>
+    ```
+    ```mps-structure
+    concept ReplyPool extends    BaseConcept                                                                                                                                                  
+                      implements <none>                                                                                                                                             
+                                                                                                                                                                      
+        instance can be root: false 
+        alias: <no alias>
+        short description: <no short description>
+        
+        properties:
+        << ... >>
+        
+        children:
+        replies : Reply[0..n]
+        
+        references:
+        << ... >>
+    ```
+然后构建一下……再在 `sandbox` 中创建一个 `ChatbotProgram`，我们就能得到一个
+```
+chatbot program <no name> {
+    qqid : <no qqid>
+    qqpassword : <no qqpassword>
+    
+    pool :
+        reply pool {
+        
+            replies :
+                << ... >>
+        }
+}
+```
+
+看起来似乎有点像模像样了，好耶。
+我们还可以在 `replies` 那里 <kbd>CS</kbd> 然后发现它会提示一个 `OnReceive`，直接回车就能出来一个
+```
+on receive {
+    keyword : <no keyword>
+    reply : <no reply>
+    
+}
+```
+挺好的，好像可以拿来只填空了。
+接下来我们要让这个东西看起来好看点。

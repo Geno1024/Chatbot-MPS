@@ -89,3 +89,5 @@ ReplyEntryName ::= String # Added
 StaticReply ::= String
 InputAwareReply ::= Function
 ```
+
+当然，实际在写的时候可能突然想到就加上什么功能也是有可能的。比如说我为什么现在跑回来加这句话呢？
