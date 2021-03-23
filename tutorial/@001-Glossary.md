@@ -13,6 +13,10 @@
 
 - <a id="concept">Concept</a>: 概念 [@0003](0003-Structure-Elementary.md)
 
+# E
+
+- <a id="editor"><span style="color: rgb(248, 207, 139)">Editor</span></a>: 编辑器 [@0004](0004-Editor-Elementary.md)
+
 # M
 
 - <a id="module">Module</a>: 模块 [@0001](0001-Basics_Of_JetBrains_MPS.md)
