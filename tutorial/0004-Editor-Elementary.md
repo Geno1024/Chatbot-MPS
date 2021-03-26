@@ -172,3 +172,7 @@ Reply Pool:
     If message contains <no keyword> then reply <no reply>
     If message contains <no keyword> then reply <no reply>
 ```
+
+---
+
+写到这里的时候发现这个东西距离我想要的那个有点距离了，我准备重新写一下。同时因为一些现实中的原因，我准备先暂时只集中精力写好这个 Chatbot。
