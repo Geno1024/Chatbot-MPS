@@ -62,3 +62,113 @@ Info: Editor for concept $Concept is not defined. Default editor will be used.
     inspected cell layout:
         <choose cell model>
 ```
+其中：
+- `node cell layout` 是直接看到的这个 Concept 的长相。
+- `inspected cell layout` 是要在 Inspector 中才能看到的东西。
+
+Inspector 在 MPS 界面右下角，快捷键可能是 <kbd>Alt</kbd> + <kbd>2</kbd>（可能是我自己设定的，我忘记了）。这个东西后面也会非常常用：它可以用来让一些重要但不应该放在“主界面”上的参数、选项等有藏身之地。
+
+现在我们来学习一下怎么写 <span style="color: rgb(248, 207, 139)">Editor</span>。
+
+由于现在 `node cell layout` 是红的，我们直接在这里 <kbd>CS</kbd> 看一下有啥。  
+……好长啊，不列出来了。慢慢说。
+
+## Concept Editor 有什么部件
+
+我们最经常用到的部件有：
+1. `[>` (collection, collection (horizontal))，用于把部件水平排列
+2. `[/` (collection (vertical))，用于把部件按行排列
+3. `--->` (indent)，用于制造一个缩进
+4. `"` (text constant)，用于硬编码固定文字
+5. `{` (property)，该 Concept 的 property 的占位符
+6. `%` (child node cell)，该 Concept 的 children 的占位符
+7. `(>` (child node cell list (horizontal))，用于把 children 水平排列
+8. `(/` (child node cell list (vertical))，用于把 children 按行排列
+9. `if` (alternation)，当满足条件时使用 `true` 的，不满足时使用 `false` 的 （条件在 Inspector 中写）
+10. `/empty cell:`，当 `children` 为空时使用的占位
+11. `read only model access`，这个东西我认为是展示时最方便且灵活的，根据当前节点的形态做出任意 Java 操作输出 `string`
+12. `model access`，将当前节点进行自定义变形后进行输出与输入
+13. `swing component` ~~让你 Java GUI 自由~~
+14. `image` ~~这合理吗~~
+
+在了解了这些部件的作用之后，我们通过实际写程序来加深一下印象
+
+## 实际编写一个 Concept Editor
+
+首先我们先考虑一下我们要写出什么样子。
+
+我思想比较传统，我的目标结果是这样的：
+```
+# Editor
+Chatbot Program for <name>
+
+QQ: <qq>
+
+Reply Pool:
+    If message contains <keyword> then reply <reply>
+    If message contains <keyword> then reply <reply>
+    
+--------
+# Inspector
+QQ Password: <password>
+```
+
+那么我们就能写出对应的 Concept Editor:
+```mps-editor
+<default> editor for concept ChatbotProgram
+    node cell layout:
+        [/
+          [> Chatbot Program for { name } <]
+          empty
+          [> QQ: { qqid } <]
+          empty
+          Reply Pool:
+          [> ---> % pool % <]
+        /]
+    inspected cell layout:
+        [> QQ password: { qqpassword } <]
+```
+
+通过这个过程，逐步练习一下 MPS 的使用：
+- 添加一个格子，使用 <kbd>Enter</kbd>
+- 让 `<constant>` 里面输入的 `[>` 变成真的 horizontal collection：使用 <kbd>CS</kbd>
+
+接下来出现了问题，这个 `% pool %` 会怎么排版呢？没事不急，我们先 Rebuild 一下……
+
+打开那个 sandbox 中我们创建的 ChatbotProgram，可以看到它现在已经好了一部分了：
+```
+Chatbot Program for <no name>                              
+QQ: <no qqid>                                              
+Reply Pool:                                                
+    reply pool { 
+        
+        replies : 
+            << ... >> 
+    }
+```
+
+我们再接再厉，把 `ReplyPool` 和 `OnReceive` 的 Concept Editor 都写一下：
+```mps-editor
+<default> editor for concept ReplyPool
+    node cell layout:
+        (/ % replies %            /)
+           /empty cell: <default>
+    inspected cell layout:
+        <choose cell model>
+```
+```mps-editor
+<default> editor for concept OnReceive
+    node cell layout:
+        [> If message contains { keyword } then reply { reply } <]
+    inspected cell layout:
+        <choose cell model>
+```
+
+写好之后再 Rebuild Language，可以看到 `sandbox` 中的 ChatbotProgram 已经长成了我们想要的样子：
+```
+Chatbot Program for <no name>                             
+QQ: <no qqid>                                             
+Reply Pool:                                               
+    If message contains <no keyword> then reply <no reply>
+    If message contains <no keyword> then reply <no reply>
+```
