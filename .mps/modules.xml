@@ -2,6 +2,8 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/com.geno1024.chatbotlang.impl.qq/com.geno1024.chatbotlang.impl.qq.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/com.geno1024.chatbotlang.impl.qq/runtime/com.geno1024.chatbotlang.impl.qq.runtime.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/com.geno1024.chatbotlang/com.geno1024.chatbotlang.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/com.geno1024.chatbotlang/runtime/com.geno1024.chatbotlang.runtime.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/com.geno1024.chatbotlang/sandbox/com.geno1024.chatbotlang.sandbox.msd" folder="" />
