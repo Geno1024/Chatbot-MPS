@@ -4,9 +4,11 @@
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tce9" ref="r:e7a593e3-4a2f-4676-8ccc-c5b95b97fe2d(com.geno1024.chatbotlang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
@@ -25,7 +27,14 @@
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
       <concept id="1239814640496" name="jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid" flags="nn" index="2EHx9g" />
+      <concept id="1078938745671" name="jetbrains.mps.lang.editor.structure.EditorComponentDeclaration" flags="ig" index="PKFIW" />
+      <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
+        <reference id="1078939183255" name="editorComponent" index="PMmxG" />
+      </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
+        <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
+      </concept>
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -97,6 +106,9 @@
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
+      </concept>
+      <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
+        <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
@@ -508,6 +520,35 @@
         <node concept="2iRfu4" id="3pD1eW3N9BV" role="2iSdaV" />
       </node>
       <node concept="2iRkQZ" id="3pD1eW3N9BE" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="PKFIW" id="3pD1eW3O2vA">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.replykind" />
+    <property role="TrG5h" value="name" />
+    <ref role="1XX52x" to="tce9:3pD1eW3O2v6" resolve="ReplyStatic" />
+    <node concept="3F0A7n" id="3pD1eW3O2vC" role="2wV5jI">
+      <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3pD1eW3O2wv">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.replykind" />
+    <ref role="1XX52x" to="tce9:3pD1eW3O2v6" resolve="ReplyStatic" />
+    <node concept="3EZMnI" id="3pD1eW3O2wx" role="2wV5jI">
+      <node concept="PMmxH" id="3pD1eW3O2x1" role="3EZMnx">
+        <ref role="PMmxG" node="3pD1eW3O2vA" resolve="name" />
+      </node>
+      <node concept="3F0ifn" id="3pD1eW3O2wI" role="3EZMnx">
+        <property role="3F0ifm" value="=" />
+        <ref role="1k5W1q" to="tpen:hF$iUjy" resolve="Operator" />
+      </node>
+      <node concept="3F0ifn" id="3pD1eW3O2wQ" role="3EZMnx">
+        <property role="3F0ifm" value="reply" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+      </node>
+      <node concept="3F0A7n" id="3pD1eW3O2xm" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3pD1eW3O2v7" resolve="reply" />
+      </node>
+      <node concept="2iRfu4" id="3pD1eW3O2w$" role="2iSdaV" />
     </node>
   </node>
 </model>
