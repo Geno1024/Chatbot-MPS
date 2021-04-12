@@ -5,6 +5,7 @@
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="14" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="11" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -16,6 +17,7 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
+        <property id="1140524450557" name="separatorText" index="2czwfO" />
         <property id="1160590307797" name="usesFolding" index="S$F3r" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="6046489571270834038" name="foldedCellModel" index="3EmGlc" />
@@ -31,11 +33,20 @@
       <concept id="1078939183254" name="jetbrains.mps.lang.editor.structure.CellModel_Component" flags="sg" stub="3162947552742194261" index="PMmxH">
         <reference id="1078939183255" name="editorComponent" index="PMmxG" />
       </concept>
+      <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
+        <property id="1186414551515" name="flag" index="VOm3f" />
+      </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1186414976055" name="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" flags="ln" index="VPXOz" />
+      <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
+        <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
       <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
         <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
       </concept>
+      <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
@@ -549,6 +560,114 @@
         <ref role="1NtTu8" to="tce9:3pD1eW3O2v7" resolve="reply" />
       </node>
       <node concept="2iRfu4" id="3pD1eW3O2w$" role="2iSdaV" />
+      <node concept="VPXOz" id="3_JIMtLPq6w" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3_JIMtLOUAD">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.secondclass" />
+    <ref role="1XX52x" to="tce9:3_JIMtLODml" resolve="GroupId" />
+    <node concept="3EZMnI" id="3_JIMtLOUAF" role="2wV5jI">
+      <node concept="3F0ifn" id="3_JIMtLOUAM" role="3EZMnx">
+        <property role="3F0ifm" value="group id" />
+      </node>
+      <node concept="3F0A7n" id="3_JIMtLOUAS" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3_JIMtLODmm" resolve="id" />
+      </node>
+      <node concept="2iRfu4" id="3_JIMtLOUAI" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3_JIMtLOUB3">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.secondclass" />
+    <ref role="1XX52x" to="tce9:3_JIMtLODmr" resolve="UserId" />
+    <node concept="3EZMnI" id="3_JIMtLOUB5" role="2wV5jI">
+      <node concept="3F0ifn" id="3_JIMtLOUBc" role="3EZMnx">
+        <property role="3F0ifm" value="user id" />
+      </node>
+      <node concept="3F0A7n" id="3_JIMtLOUBi" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3_JIMtLODms" resolve="id" />
+      </node>
+      <node concept="2iRfu4" id="3_JIMtLOUB8" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3_JIMtLP0xE">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.firstclass" />
+    <ref role="1XX52x" to="tce9:3_JIMtLODmb" resolve="OnBoot" />
+    <node concept="3EZMnI" id="3_JIMtLP0xG" role="2wV5jI">
+      <node concept="3F0ifn" id="3_JIMtLP0xN" role="3EZMnx">
+        <property role="3F0ifm" value="Send to" />
+      </node>
+      <node concept="3F1sOY" id="3_JIMtLP0xT" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3_JIMtLOJW5" resolve="id" />
+      </node>
+      <node concept="3F0ifn" id="y3b4jZ5Wfe" role="3EZMnx">
+        <property role="3F0ifm" value="with" />
+      </node>
+      <node concept="3F1sOY" id="y3b4jZ65gD" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3_JIMtLODmd" resolve="reply" />
+      </node>
+      <node concept="2iRfu4" id="3_JIMtLP0xJ" role="2iSdaV" />
+      <node concept="VPXOz" id="3_JIMtLPq6s" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3_JIMtLP6BY">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.firstclass" />
+    <ref role="1XX52x" to="tce9:3_JIMtLODmz" resolve="OnReceive" />
+    <node concept="3EZMnI" id="3_JIMtLP6C0" role="2wV5jI">
+      <node concept="3F0ifn" id="3_JIMtLP6C7" role="3EZMnx">
+        <property role="3F0ifm" value="If" />
+      </node>
+      <node concept="3F1sOY" id="3_JIMtLP6Cd" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3_JIMtLODm$" resolve="condition" />
+      </node>
+      <node concept="3F0ifn" id="3_JIMtLP6Cl" role="3EZMnx">
+        <property role="3F0ifm" value="then" />
+      </node>
+      <node concept="3F1sOY" id="y3b4jZ6Cm7" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:3_JIMtLODmA" resolve="reply" />
+      </node>
+      <node concept="2iRfu4" id="3_JIMtLP6C3" role="2iSdaV" />
+      <node concept="VPXOz" id="3_JIMtLPq6u" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="3_JIMtLPcTE">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.secondclass" />
+    <ref role="1XX52x" to="tce9:3_JIMtLPcTs" resolve="KeywordContainsCondition" />
+    <node concept="3EZMnI" id="3_JIMtLPcTG" role="2wV5jI">
+      <node concept="3F0ifn" id="3_JIMtLPcTN" role="3EZMnx">
+        <property role="3F0ifm" value="contains keyword" />
+      </node>
+      <node concept="3F2HdR" id="3_JIMtLPcTT" role="3EZMnx">
+        <property role="2czwfO" value=" and " />
+        <ref role="1NtTu8" to="tce9:3_JIMtLPcTx" resolve="keywords" />
+        <node concept="2iRfu4" id="3_JIMtLPcTV" role="2czzBx" />
+      </node>
+      <node concept="2iRfu4" id="3_JIMtLPcTJ" role="2iSdaV" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="3_JIMtLPjnx">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.secondclass" />
+    <ref role="1XX52x" to="tce9:3_JIMtLPcTt" resolve="Keyword" />
+    <node concept="3F0A7n" id="3_JIMtLPjnz" role="2wV5jI">
+      <ref role="1NtTu8" to="tce9:3_JIMtLPcTu" resolve="keyword" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="y3b4jZ5O07">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.firstclass" />
+    <ref role="1XX52x" to="tce9:y3b4jZ5NZX" resolve="ReplyReference" />
+    <node concept="1iCGBv" id="y3b4jZ5O0i" role="2wV5jI">
+      <ref role="1NtTu8" to="tce9:y3b4jZ5NZY" resolve="reply" />
+      <node concept="1sVBvm" id="y3b4jZ5O0k" role="1sWHZn">
+        <node concept="3F0A7n" id="y3b4jZ5O0r" role="2wV5jI">
+          <property role="1Intyy" value="true" />
+          <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
