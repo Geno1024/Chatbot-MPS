@@ -12,6 +12,7 @@
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="tce9" ref="r:e7a593e3-4a2f-4676-8ccc-c5b95b97fe2d(com.geno1024.chatbotlang.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
+    <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -139,6 +140,14 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
         <node concept="2iRfu4" id="3pD1eW3M4xF" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="y3b4jZ6Y6$" role="3EZMnx">
+        <node concept="VPM3Z" id="y3b4jZ6Y6A" role="3F10Kt" />
+        <node concept="3XFhqQ" id="y3b4jZ6Y7c" role="3EZMnx" />
+        <node concept="3F1sOY" id="y3b4jZ6Y7i" role="3EZMnx">
+          <ref role="1NtTu8" to="tce9:y3b4jZ6Y5X" resolve="uses" />
+        </node>
+        <node concept="2iRfu4" id="y3b4jZ6Y6D" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="3pD1eW3NwlV" role="3EZMnx">
         <node concept="VPM3Z" id="3pD1eW3NwlX" role="3F10Kt" />
@@ -668,6 +677,32 @@
           <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         </node>
       </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="y3b4jZ6Mxt">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.list" />
+    <ref role="1XX52x" to="tce9:y3b4jZ6Mxj" resolve="ChatTypeList" />
+    <node concept="3F2HdR" id="y3b4jZ6MxO" role="2wV5jI">
+      <ref role="1NtTu8" to="tce9:y3b4jZ6Mxk" resolve="using" />
+      <node concept="2EHx9g" id="y3b4jZ6MxW" role="2czzBx" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="y3b4jZ6My9">
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.secondclass" />
+    <ref role="1XX52x" to="tce9:y3b4jZ6Mxi" resolve="ChatType" />
+    <node concept="3EZMnI" id="y3b4jZ6Myb" role="2wV5jI">
+      <node concept="3F0ifn" id="y3b4jZ6Myi" role="3EZMnx">
+        <property role="3F0ifm" value="Using" />
+      </node>
+      <node concept="1iCGBv" id="y3b4jZ6Myw" role="3EZMnx">
+        <ref role="1NtTu8" to="tce9:y3b4jZ6My0" resolve="language" />
+        <node concept="1sVBvm" id="y3b4jZ6Myy" role="1sWHZn">
+          <node concept="PMmxH" id="y3b4jZ6MyE" role="2wV5jI">
+            <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+          </node>
+        </node>
+      </node>
+      <node concept="2iRfu4" id="y3b4jZ6Mye" role="2iSdaV" />
     </node>
   </node>
 </model>

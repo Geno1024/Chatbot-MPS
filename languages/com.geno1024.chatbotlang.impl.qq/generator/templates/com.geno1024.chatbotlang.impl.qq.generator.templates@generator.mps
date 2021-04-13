@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:c07bc62d-9346-4324-a398-0e0c8306c6f0(com.geno1024.chatbotlang.impl.qq.templates@generator)">
+<model ref="r:c07bc62d-9346-4324-a398-0e0c8306c6f0(com.geno1024.chatbotlang.impl.qq.generator.templates@generator)">
   <persistence version="9" />
   <languages>
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />

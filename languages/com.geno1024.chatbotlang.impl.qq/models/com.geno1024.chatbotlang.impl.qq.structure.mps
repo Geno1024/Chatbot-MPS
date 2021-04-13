@@ -13,6 +13,7 @@
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
       <concept id="1071489090640" name="jetbrains.mps.lang.structure.structure.ConceptDeclaration" flags="ig" index="1TIwiD">
@@ -47,6 +48,13 @@
       <property role="TrG5h" value="qqpassword" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="y3b4jZ6MyG">
+    <property role="EcuMT" value="613382649101887660" />
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.impl.qq" />
+    <property role="TrG5h" value="QQ" />
+    <property role="34LRSv" value="QQ" />
+    <ref role="1TJDcQ" to="tce9:y3b4jZ6MxZ" resolve="ChatLanguage" />
   </node>
 </model>
 

@@ -63,6 +63,13 @@
     <node concept="PrWs8" id="4if8LWOsjk6" role="PzmwI">
       <ref role="PrY4T" to="4fqr:431DWIovi3l" resolve="IMainClass" />
     </node>
+    <node concept="1TJgyj" id="y3b4jZ6Y5X" role="1TKVEi">
+      <property role="IQ2ns" value="613382649101934973" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="uses" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="y3b4jZ6Mxj" resolve="ChatTypeList" />
+    </node>
     <node concept="1TJgyj" id="3pD1eW3M4xk" role="1TKVEi">
       <property role="IQ2ns" value="3920670375209879636" />
       <property role="20lmBu" value="fLJjDmT/aggregation" />
@@ -356,6 +363,39 @@
       <property role="20lbJX" value="fLJekj4/_1" />
       <ref role="20lvS9" node="3pD1eW3MCPG" resolve="Reply" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="y3b4jZ6Mxi">
+    <property role="EcuMT" value="613382649101887570" />
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.secondclass" />
+    <property role="TrG5h" value="ChatType" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="y3b4jZ6My0" role="1TKVEi">
+      <property role="IQ2ns" value="613382649101887616" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="language" />
+      <property role="20lbJX" value="fLJekj4/_1" />
+      <ref role="20lvS9" node="y3b4jZ6MxZ" resolve="ChatLanguage" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="y3b4jZ6Mxj">
+    <property role="EcuMT" value="613382649101887571" />
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.list" />
+    <property role="TrG5h" value="ChatTypeList" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="y3b4jZ6Mxk" role="1TKVEi">
+      <property role="IQ2ns" value="613382649101887572" />
+      <property role="20lmBu" value="fLJjDmT/aggregation" />
+      <property role="20kJfa" value="using" />
+      <property role="20lbJX" value="fLJekj6/_1__n" />
+      <ref role="20lvS9" node="y3b4jZ6Mxi" resolve="ChatType" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="y3b4jZ6MxZ">
+    <property role="EcuMT" value="613382649101887615" />
+    <property role="3GE5qa" value="com.geno1024.chatbotlang.structure.firstclass" />
+    <property role="TrG5h" value="ChatLanguage" />
+    <property role="R5$K7" value="true" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
 </model>
 

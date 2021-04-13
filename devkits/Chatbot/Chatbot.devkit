@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev-kit name="Chatbot" uuid="de9f259b-0cc7-4579-a570-9d135013355e">
+  <exported-language name="b909ed82-0387-4a45-a947-a115cc9dfec6(com.geno1024.chatbotlang)" />
+  <exported-language name="fcc2b922-b98d-4e6d-8388-ba8149eaae09(com.geno1024.chatbotlang.impl.qq)" />
+</dev-kit>
+
