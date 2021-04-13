@@ -4,12 +4,20 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="/media/geno1024/d3c42083-5b7a-4f6c-a662-82618259341c/Projects/MPSProjects/com.geno1024.chatbot/libs/mirai-core-all-2.0.0.jar!/" type="java_classes">
+      <sourceRoot location="." />
+    </modelRoot>
+    <modelRoot contentPath="/media/geno1024/d3c42083-5b7a-4f6c-a662-82618259341c/Projects/MPSProjects/com.geno1024.chatbot/libs/mirai-core-all-2.0.0-sources.jar!/" type="java_source_stubs" />
   </models>
   <facets>
     <facet type="java">
       <classes generated="true" path="${module}/classes_gen" />
     </facet>
   </facets>
+  <stubModelEntries>
+    <stubModelEntry path="/media/geno1024/d3c42083-5b7a-4f6c-a662-82618259341c/Projects/MPSProjects/com.geno1024.chatbot/libs/mirai-core-all-2.0.0.jar" />
+    <stubModelEntry path="/media/geno1024/d3c42083-5b7a-4f6c-a662-82618259341c/Projects/MPSProjects/com.geno1024.chatbot/libs/mirai-core-all-2.0.0-sources.jar" />
+  </stubModelEntries>
   <sourcePath />
   <languageVersions />
   <dependencyVersions>
